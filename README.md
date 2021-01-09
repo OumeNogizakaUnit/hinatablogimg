@@ -20,3 +20,26 @@ make init
 ```
 make run
 ```
+
+# Windowsで動かす
+
+試してないから動くかはわからない
+
+下記のコマンドたちをPowerShellで管理者で実行
+
+## 仮想環境作成
+
+
+```
+python -m venv venv
+.\venv\Scripts\python.exe -m pip install -U pip setuptools wheel
+.\venv\Scripts\python.exe -m pip install -r requirements.txt
+
+```
+
+## 実行
+
+```
+.\venv\Scripts\python.exe hinatablogimg/main.py
+
+```

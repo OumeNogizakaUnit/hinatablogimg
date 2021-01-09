@@ -130,3 +130,6 @@ def register_img(imgurl, imgname, download_dir):
     print(imgpath)
     with imgpath.open('wb') as fd:
         fd.write(res.content)
+
+if __name__ == '__main__':
+    main()
