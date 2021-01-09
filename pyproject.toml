@@ -9,8 +9,10 @@ license = "MIT"
 python = "^3.8"
 requests = "^2.25.1"
 beautifulsoup4 = "^4.9.3"
+python-dotenv = "^0.15.0"
 
 [tool.poetry.dev-dependencies]
+flake8 = "^3.8.4"
 
 [tool.poetry.scripts]
 main = "hinatablogimg.main:main"

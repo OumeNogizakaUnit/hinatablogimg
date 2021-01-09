@@ -1,0 +1,2 @@
+class HinatablogimgError(Exception):
+    pass

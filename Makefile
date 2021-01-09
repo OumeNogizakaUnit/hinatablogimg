@@ -8,6 +8,7 @@ usage:
 	@echo "Targets:"
 	@echo "  init		init directory"
 	@echo "  run            run script"
+	@echo "  lint           run flake8"
 	@echo "  clean		clean current directory"
 
 .PHONY: init
@@ -20,6 +21,10 @@ ${VENV}:
 .PHONY: run
 run: ${VENV}
 	${POETRY} run main
+
+.PHONY: lint
+lint: ${VENV}
+	${POETRY} run flake8 hinatablogimg/
 
 .PHONY: clean
 clean:
