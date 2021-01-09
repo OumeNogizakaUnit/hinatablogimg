@@ -7,6 +7,7 @@ usage:
 	@echo ""
 	@echo "Targets:"
 	@echo "  init		init directory"
+	@echo "  run            run script"
 	@echo "  clean		clean current directory"
 
 .PHONY: init
@@ -15,6 +16,10 @@ init:
 
 ${VENV}:
 	${POETRY} install
+
+.PHONY: run
+run: ${VENV}
+	${POETRY} run main
 
 .PHONY: clean
 clean:
