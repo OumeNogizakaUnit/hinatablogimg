@@ -7,8 +7,8 @@ from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from pathlib import Path
 
-from . import member
-from .exceptions import HinatablogimgError
+from hitanablogimg import member
+from hinatablogimg.exceptions import HinatablogimgError
 
 load_dotenv()
 
