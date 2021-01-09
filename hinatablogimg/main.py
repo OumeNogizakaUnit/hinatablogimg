@@ -1,13 +1,18 @@
 # vi: set et sw=4 ts=4 softtabstop=4 :
 import re
 import os
+import sys
 import requests
+import logging
+import logging.config
+from logging import DEBUG, INFO, ERROR
+import yaml
 from datetime import datetime
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from pathlib import Path
-
-from hitanablogimg import member
+from tqdm import tqdm
+from hinatablogimg import member
 from hinatablogimg.exceptions import HinatablogimgError
 
 load_dotenv()
@@ -15,10 +20,23 @@ load_dotenv()
 HINATADIR = os.environ.get("HINATABLOGIMG_HINATADIR", "./img")
 CREATEDIR = True
 
+LOGCONFPATH = os.environ.get("HINATABLOGIMG_LOGCONFPATH",
+        Path(__file__).parent.joinpath('logconfig.yml'))
+
+LOGLEVEL = INFO
+
+logger = None
+
 def main():
-    maxpage = 1
-    for i in range(maxpage):
-        fetch_one_page(i, HINATADIR)
+    load_logger()
+    maxpage = 3
+    for i in tqdm(range(maxpage)):
+        logger.debug(f"{i}ページ目の処理開始")
+        try:
+            fetch_one_page(i, HINATADIR)
+        except Exception as error:
+            logger.error(error)
+            sys.exit(1)
 
 
 def fetch_one_page(page, download_path):
@@ -36,7 +54,8 @@ def fetch_one_page(page, download_path):
         raise HinatablogimgError(errmsg)
 
     article_list = find_article(res.text)
-    for article in article_list:
+    for i, article in enumerate(article_list):
+        logger.debug(f'{i+1}個目のブログの処理開始')
         fetch_one_article(article, download_path)
 
 
@@ -55,6 +74,7 @@ def fetch_one_article(article_data, download_path):
     '''
     memberstr = find_memberstr(article_data)
     datestr = find_datestr(article_data)
+    logger.debug(f'{memberstr} {datestr} の保存を開始')
     imgurls = find_imgurllist(article_data)
     for index, imgurl in enumerate(imgurls):
         suffix = imgurl.split('.')[-1]
@@ -97,6 +117,7 @@ def find_imgurllist(htmltext):
     # バグってるimg要素を探す
     for img_el in img_els:
         if len(img_el.text) > 0:
+            logger.debug(f'img要素がバグってる')
             return find_imgurllist_bug(htmltext)
     imgurls = [img_el.attrs['src'] for img_el in img_els
                if 'src' in img_el.attrs]
@@ -127,9 +148,20 @@ def register_img(imgurl, imgname, download_dir):
         download_path.mkdir(mode=0o755, parents=True)
     res = requests.get(imgurl)
     imgpath = Path(download_path, imgname)
-    print(imgpath)
+    logger.info(imgpath)
     with imgpath.open('wb') as fd:
         fd.write(res.content)
+
+def load_logger():
+    global logger
+    logpath = Path(LOGCONFPATH)
+    if logpath.exists():
+        with logpath.open() as fd:
+            confdata = yaml.safe_load(fd)
+            logging.config.dictConfig(confdata)
+    logger = logging.getLogger('hinatablogimg')
+    logger.level = LOGLEVEL
+
 
 if __name__ == '__main__':
     main()
