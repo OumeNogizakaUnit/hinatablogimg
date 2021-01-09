@@ -26,6 +26,9 @@ run: ${VENV}
 lint: ${VENV}
 	${POETRY} run flake8 hinatablogimg/
 
+requirements.txt:
+	${VENV}/bin/python -m pip freeze > requirements.txt
+
 .PHONY: clean
 clean:
 	rm -rf ${VENV}
