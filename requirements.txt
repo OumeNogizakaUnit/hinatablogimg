@@ -1,14 +1,6 @@
-beautifulsoup4 @ file:///home/yuuta/.cache/pypoetry/artifacts/e0/38/d7/f9b232f345b5354d13487afd553ef917480088fda47bb62e056a3a7924/beautifulsoup4-4.9.3-py3-none-any.whl
-certifi @ file:///home/yuuta/.cache/pypoetry/artifacts/a5/b1/71/0fb759c6550e4dc0a538f0fc47cdf7dcd23bae70385241ee92b4d5b87c/certifi-2020.12.5-py2.py3-none-any.whl
-chardet @ file:///home/yuuta/.cache/pypoetry/artifacts/47/b7/82/19c2b887f87f3adbaf4e34c55189388e5132c78f6929d7001a78b0209b/chardet-4.0.0-py2.py3-none-any.whl
-flake8 @ file:///home/yuuta/.cache/pypoetry/artifacts/5c/5b/91/23d9fee55905e042e829a14e2fa56ffd39c81246aba659e2840bab728b/flake8-3.8.4-py2.py3-none-any.whl
-idna @ file:///home/yuuta/.cache/pypoetry/artifacts/9e/f9/03/6066b92d35486e7f0d4f310126e3c60a6619726e43ef98e32e105b5c52/idna-2.10-py2.py3-none-any.whl
-mccabe @ file:///home/yuuta/.cache/pypoetry/artifacts/37/6e/69/4a33a4d6c80c775b1ee205face2c6e07b762c8602bb0f0d236ebe790c5/mccabe-0.6.1-py2.py3-none-any.whl
-pycodestyle @ file:///home/yuuta/.cache/pypoetry/artifacts/01/f4/cf/c7e34cb76e03e95d9eff28af16fe09ee8edd01cc985fc2b88453b6d311/pycodestyle-2.6.0-py2.py3-none-any.whl
-pyflakes @ file:///home/yuuta/.cache/pypoetry/artifacts/da/83/11/1e9a80c39638c6967e9b1117b17d8ec5f723ddd0a88251cc08dc0807b0/pyflakes-2.2.0-py2.py3-none-any.whl
-python-dotenv @ file:///home/yuuta/.cache/pypoetry/artifacts/bf/e2/32/a8162049eb27a891919d21d76446fd01711014b43c809ceef66925e85b/python_dotenv-0.15.0-py2.py3-none-any.whl
-PyYAML @ file:///home/yuuta/.cache/pypoetry/artifacts/28/fe/c8/ee41918e776a0a8fea86e3b4d45d54620381726103e666941e1218c099/PyYAML-5.3.1.tar.gz
-requests @ file:///home/yuuta/.cache/pypoetry/artifacts/fe/f0/74/d691c7619cd645682c495ff78949b9c284e88d3f2ee85124df5cec5b0a/requests-2.25.1-py2.py3-none-any.whl
-soupsieve @ file:///home/yuuta/.cache/pypoetry/artifacts/7d/16/39/875598e41202bbae8dade4d4bb7d74c1bc986f1d7116601299a7aeeabf/soupsieve-2.1-py3-none-any.whl
-tqdm @ file:///home/yuuta/.cache/pypoetry/artifacts/8a/df/4f/c765efbf5eb5ddffa2c6fb4f50a17ce67640fec74da40bb1177d0fa8aa/tqdm-4.55.1-py2.py3-none-any.whl
-urllib3 @ file:///home/yuuta/.cache/pypoetry/artifacts/96/0a/4c/8762c25f99b3c4f2118ea3d1999202c730ac5141ce379adc90469d265a/urllib3-1.26.2-py2.py3-none-any.whl
+beautifulsoup4
+flake8
+python-dotenv
+PyYAML
+requests
+tqdm
