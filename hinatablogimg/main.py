@@ -14,12 +14,12 @@ from hinatablogimg.utils import fetch_one_page
 
 
 @click.command()
-@click.option('--startpage',
+@click.option('--startpage', '-s',
               type=click.IntRange(0),
               default=0,
               show_default=True,
               help='探索開始ページ')
-@click.option('--endpage',
+@click.option('--endpage', '-e',
               type=click.IntRange(0),
               default=3,
               show_default=True,
