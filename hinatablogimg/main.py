@@ -15,12 +15,12 @@ from hinatablogimg.utils import fetch_one_page
 
 @click.command()
 @click.option('--startpage', '-s',
-              type=click.IntRange(0),
+              type=int,
               default=0,
               show_default=True,
               help='探索開始ページ')
 @click.option('--endpage', '-e',
-              type=click.IntRange(0),
+              type=int,
               default=3,
               show_default=True,
               help='探索終了ページ')
@@ -52,6 +52,15 @@ Argument:
     load_dotenv()
     logger = load_logger(logpath=logpath)
     logger.setLevel(loglevel)
+    if endpage < 0:
+        msg = f'endpage is under 0 [{endpage}]'
+        logger.warning(msg)
+    if startpage < 0:
+        msg = f'startpage is under 0 [{startpage}]'
+        logger.warning(msg)
+    if endpage < startpage:
+        msg = f'startpage is under endpage [{startpage, endpage}]'
+        logger.warning(msg)
     for i in range(startpage, endpage+1):
         logger.debug(f"{i}ページ目の処理開始")
         try:
