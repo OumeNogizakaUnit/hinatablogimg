@@ -44,7 +44,7 @@ def find_article(htmltext):
     '''
     soup = BeautifulSoup(htmltext, 'html.parser')
     article_els = soup.find_all('div', class_='p-blog-article')
-    return article_els[:6]
+    return article_els
 
 
 def fetch_one_article(article_data, download_path):
