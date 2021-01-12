@@ -26,7 +26,7 @@ from hinatablogimg.utils import fetch_one_page
               help='探索終了ページ')
 @click.option('--logpath',
               type=click.Path(exists=False),
-              default='./log/hinatablogimg.log',
+              default='./hinatablogimg.log',
               show_default=True,
               help='ログファイル出力先パス')
 @click.option('--loglevel',
