@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hinatablogimg"
-version = "0.1.1"
+version = "1.0.0"
 description = "hinatayou"
 authors = ["YAMASHITA Yuta <proyuuta0618188188@gmail.com>"]
 license = "MIT"
