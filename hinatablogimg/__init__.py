@@ -1,4 +1,5 @@
 __name__ = 'hinatablogimg'
+__version__ = '0.1.1'
 
 import os
 from pathlib import Path

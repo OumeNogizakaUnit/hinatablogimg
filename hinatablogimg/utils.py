@@ -5,13 +5,13 @@ from logging import getLogger
 from datetime import datetime
 from bs4 import BeautifulSoup
 from pathlib import Path
+from tqdm import trange
 
 from hinatablogimg import __name__ as modname
 from hinatablogimg import (MEMBER,
                            CREATEDIR)
 from hinatablogimg.exceptions import HinatablogimgError
 
-print(modname)
 logger = getLogger(modname)
 
 
@@ -30,7 +30,10 @@ def fetch_one_page(page, download_path):
         raise HinatablogimgError(errmsg)
 
     article_list = find_article(res.text)
-    for i, article in enumerate(article_list):
+    pbar = trange(len(article_list))
+    for i in pbar:
+        pbar.set_description(f'Page {page:>3}')
+        article = article_list[i]
         logger.debug(f'{i+1}個目のブログの処理開始')
         fetch_one_article(article, download_path)
 

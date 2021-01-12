@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hinatablogimg"
-version = "0.1.0"
+version = "0.1.1"
 description = "hinatayou"
 authors = ["YAMASHITA Yuta <proyuuta0618188188@gmail.com>"]
 license = "MIT"
@@ -18,7 +18,7 @@ click = "^7.1.2"
 flake8 = "^3.8.4"
 
 [tool.poetry.scripts]
-main = "hinatablogimg.main:main"
+hinatablogimg = "hinatablogimg.main:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
