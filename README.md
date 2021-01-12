@@ -4,21 +4,39 @@
 
 # 必要なもの
 
-* poetry コマンド
-* make コマンド
+* pip コマンド
 
 # 準備
 
-以下のコマンドを実行
+`hinatablogimg` は `pip` コマンド用いてインストールが可能です。
 
 ```
-make init
+pip install git+https://github.com/funnelyuuta/hinatablogimg
 ```
 
 # 実行
 
 ```
-make run
+hinatablogimg ./savedir
+```
+
+# 使い方
+
+```
+Usage: hinatablogimg [OPTIONS] SAVEDIR
+
+  Argument:
+
+      SAVEDIR             探索画像保存先パス
+
+Options:
+  --startpage INTEGER RANGE       探索開始ページ  [default: 0]
+  --endpage INTEGER RANGE         探索終了ページ  [default: 3]
+  --logpath PATH                  ログファイル出力先パス  [default:
+                                  ./log/hinatablogimg.log]
+
+  --loglevel [DEBUG|INFO|WARNING|ERROR|CRITICAL]
+                                  ログレベル  [default: INFO]
 ```
 
 # Windowsで動かす

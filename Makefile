@@ -20,7 +20,7 @@ ${VENV}:
 
 .PHONY: run
 run: ${VENV}
-	${POETRY} run main
+	${POETRY} run hinatablogimg
 
 .PHONY: lint
 lint: ${VENV}

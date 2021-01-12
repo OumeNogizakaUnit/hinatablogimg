@@ -1,23 +1,24 @@
 [tool.poetry]
 name = "hinatablogimg"
-version = "0.1.0"
+version = "1.0.0"
 description = "hinatayou"
 authors = ["YAMASHITA Yuta <proyuuta0618188188@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = ">=3.6"
 requests = "^2.25.1"
 beautifulsoup4 = "^4.9.3"
 python-dotenv = "^0.15.0"
 tqdm = "^4.55.1"
 PyYAML = "^5.3.1"
+click = "^7.1.2"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.8.4"
 
 [tool.poetry.scripts]
-main = "hinatablogimg.main:main"
+hinatablogimg = "hinatablogimg.main:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

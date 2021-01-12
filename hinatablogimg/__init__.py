@@ -1,4 +1,14 @@
-member = {
+__name__ = 'hinatablogimg'
+__version__ = '1.0.0'
+
+import os
+from pathlib import Path
+
+HINATADIR = os.environ.get("HINATABLOGIMG_HINATADIR", "./img")
+CREATEDIR = True
+LOGCONFPATH = os.environ.get("HINATABLOGIMG_LOGCONFPATH",
+                             Path(__file__).parent.joinpath('logconfig.yml'))
+MEMBER = {
     "潮 紗理菜": "ushio_sarina",
     "影山 優佳": "kageyama_yuuka",
     "加藤 史帆": "katou_shiho",
