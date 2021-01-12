@@ -5,9 +5,9 @@ formatters:
 handlers:
   filehandler:
     class: logging.handlers.RotatingFileHandler
-    level: DEBUG
+    level: DEBUG  # override from option
     formatter: simple
-    filename: log/hinatablogimg.log
+    filename: log/hinatablogimg.log  # override from option
     maxBytes: 31457280  # 30KB
     backupCount: 10
   console:
